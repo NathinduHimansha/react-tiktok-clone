@@ -1,0 +1,39 @@
+/* this allows to scroll among the page(this is mandotory due to bug in react) */
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.app {
+  background-color: rgb(27, 27, 27);
+  height: 100vh;
+  /*centering the container */
+  display: grid;
+  place-items: center;
+}
+
+/* 
+snap is its auto fit to the point of start while scrolling(point assigned in video.css) */
+/* to feel it scroll half and leave it will auto moves to top */
+.app__videos {
+  position: relative;
+  object-fit: contain;
+  height: 90%;
+  max-height: 800px;
+  overflow: scroll;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+  /* telling to snap */
+  scroll-snap-type: y mandatory;
+}
+
+/* hide scroll bar for chrome,safari,opera */
+.app__videos::-webkit-scrollbar {
+  display: none;
+}
+
+/* hide scrolbar for IE, Edge and firefox */
+.app__videos::-webkit-scrollbar {
+  -ms-overflow-style: none; /*IE and Edge */
+  scrollbar-width: none; /*firefox */
+}
